@@ -1,0 +1,38 @@
+<div class="container-login">
+  <div class="mb-4 row">
+    <label for="inputUsername" class="col-sm-3 col-form-label">Username</label>
+    <div class="col-sm-9">
+      <input type="text"  class="form-control" id="inputUsername" [(ngModel)]="username">
+    </div>
+  </div>
+  <div class="mb-4 row">
+    <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+    <div class="col-sm-9">
+      <input type="password" class="form-control" id="inputPassword" [(ngModel)]="password">
+    </div>
+  </div>
+  <div class="mb-4 row" *ngIf="isRegister" >
+    <label for="inputPassword2" class="col-sm-3 col-form-label">Confirm</label>
+    <div class="col-sm-9">
+      <input type="password" class="form-control" id="inputPassword2" [(ngModel)]="password2">
+    </div>
+  </div>
+  <div class="mb-4 row" *ngIf="isRegister" >
+    <label for="staticEmail" class="col-sm-3 col-form-label">Email</label>
+    <div class="col-sm-9">
+      <input type="email"  class="form-control" id="staticEmail" [(ngModel)]="email">
+    </div>
+  </div>
+  <div class="mb-4">
+    <button class="btn btn-secondary col-md-3 col-sm-12" (click)="resetForm()">Cancel</button>
+    <button class="btn btn-success col-md-3 col-sm-12" *ngIf="!isRegister" (click)="login()">Login</button>
+    <button class="btn btn-primary col-md-3 col-sm-12" *ngIf="isRegister"  (click)="registerUser()">Register</button>
+  </div>
+  <div class="mb-4">
+    <button class="btn btn-link col-md-3 col-sm-12" *ngIf="isRegister" (click)="toggleForm()">Login</button>
+    <button class="btn btn-link col-md-3 col-sm-12" *ngIf="!isRegister"  (click)="toggleForm()">Register</button>
+  </div>
+  <div class="alert alert-success" role="alert" *ngIf="showRegisterMessage">
+    {{ registerMessage }}
+  </div>
+</div>

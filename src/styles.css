@@ -1,0 +1,188 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --background: #dcdee1;
+  --text-primary: #1b052c;
+  --text-secondary: #393b5b;
+  --accent: #577189;
+  --accent-hover: #a3abb9;
+  --border: #577189;
+  --shadow: #a3abb9;
+  --important: #b00;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  color: var(--text-primary);
+  background-color: var(--background);
+}
+
+.container-fluid {
+  max-width: 1000px;
+}
+
+.container-main{
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+a, a:hover, a:visited, a:active, a:link {
+  color: var(--text-primary);
+}
+
+.navbar-bg {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.navbar-bg a:visited, a:hover, a:link {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-expand .navbar-nav .nav-link {
+  padding-left: 2rem;
+  padding-right: 1rem;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-toggler, .navbar-toggler {
+  color: var(--text-primary);
+  border: var(--text-primary) !important;
+  border-color: var(--text-primary) !important;
+  /* background-color: var(--border); */
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--text-secondary);
+  border-color: var(--text-secondary);
+}
+
+.container-home {
+  background-color: var(--background);
+  color: var(--text-primary);
+  min-height: 95vh;
+  overflow: hidden;
+}
+
+.container-home .user-picture {
+  width: 250px;
+}
+
+.footer {
+  font-size: 12px;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.electric {
+  color: white;
+  background-color: darkgoldenrod;
+}
+
+.flying {
+  color: white;
+  background-color: lightslategray;
+}
+
+.dragon {
+  color: black;
+  background-color: lightcoral;
+}
+
+.bug {
+  color: white;
+  background-color: darkgreen;
+}
+
+.poison {
+  color: white;
+  background-color: darkviolet;
+}
+
+.ghost {
+  color: white;
+  background-color: steelblue;
+}
+
+.fire {
+  color: white;
+  background-color: darkorange;
+}
+
+.grass {
+  color: black;
+  background-color: lawngreen;
+}
+
+.water, .ice {
+  color: #1b052c;
+  background-color: lightskyblue;
+}
+
+.normal {
+  color: black;
+  background-color: grey;
+}
+
+.fighting {
+  color: #1b052c;
+  background-color: grey;
+}
+
+.ground {
+  color: black;
+  background-color: saddlebrown;
+}
+
+.fairy {
+  color: black;
+  background-color: fuchsia;
+}
+
+.important {
+  color: #bb0000;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.justify-align {
+  text-align: justify;
+  text-justify: inter-word;
+}

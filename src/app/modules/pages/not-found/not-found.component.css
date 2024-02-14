@@ -1,0 +1,14 @@
+.main-central {
+  margin: auto;
+  width: 90%;
+  padding: 15px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.header-text {
+  font-size: 8em;
+  font-weight: 700;
+}

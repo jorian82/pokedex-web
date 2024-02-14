@@ -1,0 +1,44 @@
+<div>
+  <div class="input-group mb-5">
+    <span class="input-group-text">Search</span>
+<!--    <input type="text" class="form-control" [(ngModel)]="search" aria-label="Type a pokemon name">-->
+    <div class="ng-autocomplete">
+      <ng-autocomplete
+        [data]="pokemonNames"
+        [searchKeyword]="search"
+        placeholder="Select a Pokemon"
+        (selected)='selectEvent($event)'
+        (inputChanged)='onChangeSearch($event)'
+        [itemTemplate]="itemTemplate"
+        [notFoundTemplate]="notFoundTemplate">
+      </ng-autocomplete>
+
+      <ng-template #itemTemplate let-item>
+        <a [innerHTML]="item" style="color: #393b5b "></a>
+      </ng-template>
+
+      <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+      </ng-template>
+    </div>
+    <span class="input-group-text cursor"><fa-icon [icon]="faSearch" (click)="getPokemons()"></fa-icon></span>
+  </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+<!--      <div class="col-md-4" *ngFor="let pkm of searchResult">-->
+<!--        <img src="" width="100%" />-->
+<!--        {{pkm.name}}-->
+<!--      </div>-->
+      <div class="card col-md-4 cursor" *ngFor="let pkm of searchResult" [routerLink]="['/details',pkm.name]" >
+        <img src="{{pkm.sprite}}" class="card-img-top" alt="{{pkm.name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{pkm.name}}</h5>
+          <p class="card-text">
+            Type:&nbsp;
+            <span *ngFor="let type of pkm.types" class="badge {{type}}">{{type}}</span>&nbsp;
+          </p>
+        </div>
+      </div>
+    </div>
+</div>

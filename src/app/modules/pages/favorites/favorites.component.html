@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+    <h1>Favorites</h1>
+  </div>
+  <div class="row">
+    <div class="card col-md-4 cursor" *ngFor="let pkm of searchResult" [routerLink]="['/details',pkm.name]" >
+      <img src="{{pkm.sprite}}" class="card-img-top" alt="{{pkm.name}}">
+      <div class="card-body">
+        <h5 class="card-title">{{pkm.name}}</h5>
+        <p class="card-text">
+          Type:&nbsp;
+          <span *ngFor="let type of pkm.types" class="badge {{type}}">{{type}}</span>&nbsp;
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="searchResult.length<1">
+    <div class="col-12"><h1>There are no favorites to show</h1></div>
+  </div>
+</div>

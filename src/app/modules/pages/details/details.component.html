@@ -1,0 +1,51 @@
+<div class="container-home">
+  <div class="pokemon-details" *ngIf="pkm">
+    <div class="row">
+      <h1>{{pkm.name}}</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-5 col-sm-12">
+        <img src="{{pkm.sprite}}" width="100%"  alt="{{pkm.name}}"/>
+      </div>
+      <div class="col-md-5 col-sm-12 justify-align">
+        <ul>
+          <li *ngIf="desc1">{{ desc1 }}</li>
+          <li *ngIf="desc2">{{ desc2 }}</li>
+        </ul>
+        <div class="specs-container">
+          <p>Height: {{getHeight(pkm.height)}}</p>
+          <p>Weight: {{getWeight(pkm.weight)}}</p>
+        </div>
+        <br/>
+        <div class="right-align important" *ngIf="favState=='Remove'">
+          <fa-icon [icon]="faHeart"></fa-icon>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-5 col-sm-12">
+        <p>Abilities:</p>
+        <span *ngFor="let ability of pkm.abilities" class="badge text-bg-secondary">{{ ability.name }}</span>&nbsp;
+      </div>
+      <div class="col-md-5 col-sm-12">
+        <p>Types:</p>
+        <span *ngFor="let type of pkm.types" class="badge {{type}}">{{ type }}</span>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-12">
+        <button *ngIf="loggedIn" class="btn btn-warning" (click)="markFavorite()">{{favState}} favorite</button>&nbsp;
+        <button class="btn btn-danger" routerLink="/">Explore more...</button>
+      </div>
+    </div>
+  </div>
+  <div class="pokemon-details" *ngIf="!pkm">
+    <h1>There are no details to show, <br/>go back to the home page and try again</h1>
+    <button class="btn btn-link" routerLink="/">Home</button>
+  </div>
+</div>
